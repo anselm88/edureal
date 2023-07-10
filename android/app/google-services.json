@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "177061021275",
+    "project_id": "edureal-3000c",
+    "storage_bucket": "edureal-3000c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177061021275:android:ef34d0c0286540d109a17e",
+        "android_client_info": {
+          "package_name": "com.example.edureal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177061021275-5u0pltlohacmi3js4795o0imasfagne4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXV0Bwq5iVtLX41UsQR1gUlSv2vM9Fhi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177061021275-5u0pltlohacmi3js4795o0imasfagne4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
