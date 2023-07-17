@@ -1,4 +1,5 @@
 import 'package:edureal/screens/course_screen.dart';
+import 'package:edureal/screens/subject_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -58,10 +59,10 @@ class HomePage extends StatelessWidget {
   ];
 
   List imgList = [
-    'Flutter',
-    'React Native',
-    'Python',
-    'C#',
+    'Biology',
+    'Geography',
+    'Geology',
+    'Chemistry',
   ];
 
   @override
@@ -217,7 +218,7 @@ class HomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => CourseScreen(
+                                builder: (context) => SubjectScreen(
                                   imgList[index],
                                 ),
                               ),
