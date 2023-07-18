@@ -24,20 +24,18 @@ class _SubjectScreenState extends State<SubjectScreen> {
   @override
   Widget build(BuildContext context) {
     List Biology = [
-      'Biology',
-      'Geography',
-      'Geology',
-      'Chemistry',
+      'Brain',
+      'Heart',
+      'Skeleton',
+      'Skin',
     ];
-    List subject(String topic) {
-      topic = widget.img;
-      if (topic == 'Biology') {
+    List subject(String subject) {
+      subject = widget.img;
+      if (subject == 'Biology') {
         return Biology;
-      } else if (topic == 'React Native') {
+      } else if (subject == 'Geography') {
         return Biology;
-      } else if (topic == 'Python') {
-        return Biology;
-      } else if (topic == 'C#') {
+      } else if (subject == 'Geology') {
         return Biology;
       } else {
         return Biology;
@@ -118,7 +116,7 @@ class _SubjectScreenState extends State<SubjectScreen> {
             ),
             SizedBox(height: 5),
             Text(
-              "10 Models | 5 Quizzes | 1 Exam",
+              "4 Models | 4 Quizzes",
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
@@ -146,7 +144,7 @@ class _SubjectScreenState extends State<SubjectScreen> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => HeartScreen(
-                            imgList[index],
+                            subject(widget.img)[index],
                           ),
                         ),
                       );
@@ -168,38 +166,32 @@ class _SubjectScreenState extends State<SubjectScreen> {
                           ),
                         ],
                       ),
-                      child: Column(children: [
-                        Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Image.asset(
-                            "images/${subject(widget.img)[index]}.png",
-                            height: 100,
-                            width: 100,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          imgList[index],
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black.withOpacity(0.6),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "10 Objects",
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black.withOpacity(0.5),
-                          ),
-                        ),
-                      ]),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Image.asset(
+                                "images/${subject(widget.img)[index]}.png",
+                                height: 100,
+                                width: 100,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              subject(widget.img)[index],
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                          ]),
                     ),
                   );
                 }),
