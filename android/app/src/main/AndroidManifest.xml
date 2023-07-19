@@ -1,9 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.edureal">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+   <!-- <uses-feature android:glEsVersion="0x00030000" android:required="true" /> -->
+
+   <uses-feature android:name="android.hardware.camera.ar" android:required="true" />
+   
    <application
         android:label="edureal"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
             android:exported="true"
