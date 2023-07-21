@@ -1,4 +1,5 @@
 import 'package:edureal/screens/home_sreen.dart';
+import 'package:edureal/screens/signup_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -127,7 +128,29 @@ class _LoginScreenState extends State<LoginScreen> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        onPressed: () {},
+                        onPressed: () async {
+                          if (_formKey.currentState!.validate()) {
+                            try {
+                              final loggedInUser =
+                                  await _auth.signInWithEmailAndPassword(
+                                      email: email, password: password);
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => HomePage(),
+                                  ));
+                            } on FirebaseAuthException catch (error) {
+                              Fluttertoast.showToast(
+                                  msg: error.message!,
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.CENTER,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor: Colors.red,
+                                  textColor: Colors.white,
+                                  fontSize: 16.0);
+                            }
+                          }
+                        },
                         child: Padding(
                           padding: EdgeInsets.all(18),
                           child: Text(
@@ -151,28 +174,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     Text("Don't have an account?"),
                     TextButton(
-                      onPressed: () async {
-                        if (_formKey.currentState!.validate()) {
-                          try {
-                            final loggedInUser =
-                                await _auth.signInWithEmailAndPassword(
-                                    email: email, password: password);
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => HomePage(),
-                                ));
-                          } on FirebaseAuthException catch (error) {
-                            Fluttertoast.showToast(
-                                msg: error.message!,
-                                toastLength: Toast.LENGTH_SHORT,
-                                gravity: ToastGravity.CENTER,
-                                timeInSecForIosWeb: 1,
-                                backgroundColor: Colors.red,
-                                textColor: Colors.white,
-                                fontSize: 16.0);
-                          }
-                        }
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignupScreen(),
+                            ));
                       },
                       child: Text(
                         "Sign Up",

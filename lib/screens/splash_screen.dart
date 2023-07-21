@@ -48,13 +48,13 @@ class _SplashScreenState extends State<SplashScreen> {
             ));
       } else {
         if (accountType == 'student') {
-          Navigator.push(
+          Navigator.pushReplacement(
               context,
               MaterialPageRoute(
                 builder: (context) => HomePage(),
               ));
         } else {
-          Navigator.push(
+          Navigator.pushReplacement(
               context,
               MaterialPageRoute(
                 builder: (context) => HomePage(),

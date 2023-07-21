@@ -1,3 +1,4 @@
+import 'package:edureal/screens/create_quiz.dart';
 import 'package:edureal/screens/login_screen.dart';
 import 'package:edureal/screens/signup_screen.dart';
 import 'package:edureal/screens/splash_screen.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: SplashScreen(),
+      home: LoginScreen(),
     );
   }
 }
